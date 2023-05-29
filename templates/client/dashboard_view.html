@@ -1,0 +1,44 @@
+{% include 'client/dashboard.html'%}
+
+{% block content%}
+
+
+
+<div class="container my-5">
+
+        <h2 class="headings">Construction Works</h2>
+
+
+    <div class="row">
+        {% for i in project%}
+        <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+            <div class="card w-100 my-2 shadow-2-strong">
+                <img src="{{i.image.url}}" class="card-img-top" style="aspect-ratio: 1 / 1"/>
+                <div class="card-body d-flex flex-column">
+                    <h6 class="card-title"><font color="#17202A"><b>Project Name:{{i.project_name}}</b></font></h6>
+                    <p class="card-text"><font color="#17202A"> Location : {{i.location}}</font></p>
+                    <p class="card-text"><font color="#17202A">Housing Unit : {{i.housing_unit}}</font></p>
+                    <p class="card-text"><font color="#17202A">Cost : {{i.cost}}</font></p>
+                    <p class="card-text"><font color="#17202A">Contractor : {{i.contractor.fullname}}</font></p>
+                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                        <a href="{% url 'add_requirements'%}" class="btn btn-primary shadow-0 me-1">Request</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+<style>
+     .headings{
+       font-weight:bold;
+       font-kerning: auto;
+        color: #140839;
+        font-variant-caps: small-caps;
+    }
+
+</style>
+{% endblock content%}
+

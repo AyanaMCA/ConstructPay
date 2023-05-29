@@ -1,0 +1,48 @@
+{% include 'workers/dashboard.html'%}
+{% block content%}
+<section id="team" class="">
+    <div class="design" data-aos="fade-up">
+        <div class="">
+            <h2  class="headings" align="center">Construction News and Events</h2>
+        </div>
+        {% for i in news %}
+        <div class="rows">
+            <div class="col-sm-4">
+                <!-- Blog post-->
+                <div class="card mb-4">
+                    <a href="#!"><img class="card-img-top"
+                                      src="{{i.image.url}}"
+                                      alt="..."/></a>
+                    <div class="card-body">
+                        <div class="small text-muted">
+                            <h4><font color="#17202A">{{i.title}}</font></h4></div>
+                        <p class="card-text"><font color="#17202A">{{i.desc}}</font></p>
+                        <p class="card-text"><font color="#17202A">{{i.place}}</font></p>
+                        <p class="card-text"><font color="#17202A">{{i.date}}</font></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+</section><!-- End Team Section -->
+<style>
+    .design{
+       margin-top:2%;
+       font-weight:bold;
+    }
+    .headings{
+       font-weight:bold;
+       font-kerning: auto;
+    color: #140839;
+     linear-gradient(to bottom left, #553c9a, #ee4b2b);
+
+    }
+    .rows{
+          display: flex;
+    flex-wrap: wrap;
+    margin-right: -.75rem;
+    margin-left: 1.25rem;
+    }
+</style>
+{% endblock content%}

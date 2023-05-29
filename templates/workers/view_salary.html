@@ -1,0 +1,148 @@
+{% include 'workers/dashboard.html'%}
+
+{% block content%}
+{% load static %}
+
+
+<style>
+
+  html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, .2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+     .status-pen{
+       font-weight:bold;
+       font-weight: bold;
+       font-family: 'Nunito';
+       font-family: system-ui;
+       color: #ed2a2a;
+     }
+     .status-com{
+       font-weight: bold;
+       font-family: 'Nunito';
+       font-family: system-ui;
+       color: #12b312;
+     }
+     update-btn:hover {
+  background-color: #3e8e41;
+}
+
+
+.no-action {
+  display: inline-block;
+  background-color: #bf0717;
+  color: white;
+  padding: 0px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight:bold;
+  border-radius: 26px;
+  cursor: pointer;
+  font-family:revert;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn {
+  display: inline-block;
+  background-color: #47a74b;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight:bold;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family:revert;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+<section class="intro">
+    <div class="bg-image h-100"
+         style="background-image: url(https://mdbootstrap.com/img/Photos/new-templates/glassmorphism-article/img7.jpg);">
+        <div class="mask d-flex  h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card mask-custom">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless text-white mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" style="color:red">Worker Details</th>
+                                            <th scope="col" style="color:red">Contractor Name</th>
+                                            <th scope="col" style="color:red"> Salary</th>
+                                            <th scope="col" style="color:red">Increment Salary</th>
+                                            <th scope="col" style="color:red">Payment Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in workers %}
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img
+                                                            src="{{i.image.url}}"
+                                                            alt=""
+                                                            style="width: 45px; height: 45px"
+                                                            class="rounded-circle"/>
+                                                    <div class="ms-3" style="color:yellow">
+                                                        <p class="fw-bold mb-1">{{i.fullname}}</p>
+                                                        <p class="fw-bold mb-1" style="color:yellow">{{i.phone}}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td style="color:yellow">{{i.contractor.fullname}}</td>
+                                            <td style="color:yellow">{{i.salary}}</td>
+                                            <td style="color:green">{{ i.incremented_salary }}</td>
+                                            {% if i.salary_payment_set.exists %}
+                                            <td class="fw-bold mb-5" style="color:green" >Paid</td>
+                                            {% else %}
+                                            <td class="fw-bold mb-1" style="color:red">Not Paid</td>
+                                            {% endif %}
+                                        </tr>
+
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content%}

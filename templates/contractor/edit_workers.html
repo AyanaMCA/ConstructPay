@@ -1,0 +1,179 @@
+{% include 'contractor/dashboard.html'%}
+
+{% block content%}
+{% load static %}
+
+
+<div class="formbold-main-wrapper">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="formbold-form-wrapper">
+        <div class="formbold-event-wrapper">
+
+            <form method="post" enctype="multipart/form-data"
+                  action="" class="mx-1 mx-md-4">
+                {% csrf_token %}
+                <h2 class="formbold-form-title" align="center"><font color="#17202A">Edit Worker</font></h2>
+
+                {% for i in workers %}
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control"
+                               name="fullname" value="{{i.fullname}}"/>
+                        <label class="form-label" for="form3Example1c">FullName</label>
+                    </div>
+                </div><br>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="	fa fa-address-card fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="address" id="form3Example3c" class="form-control"
+                               name="address" value="{{i.address}}"/>
+                        <label class="form-label" for="form3Example3c">Address</label>
+                    </div>
+                </div><br>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa fa-phone-square fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="phone" id="form3Example4cd" class="form-control"
+                               name="phone" value="{{i.phone}}"/>
+                        <label class="form-label" for="form3Example4cd">Phone Number</label>
+                    </div>
+                </div><br>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example2c" class="form-control" name="uname"
+                               value="{{i.username}}"/>
+                        <label class="form-label" for="form3Example1c">Username</label>
+                    </div>
+                </div><br>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4c" class="form-control" name="pwd"
+                               value="{{i.password}}"/>
+                        <label class="form-label" for="form3Example4c">Password</label>
+                    </div>
+                </div><br>
+
+                <!-- <input type="hidden" value="{{i.contractor_id}}" name="contractor_id"> -->
+
+
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+                {% endfor %}
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+  }
+  .formbold-mb-5 {
+    margin-bottom: 20px;
+  }
+  .formbold-pt-3 {
+    padding-top: 12px;
+  }
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background-color: white;
+  }
+
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+    background: white;
+  }
+  .formbold-form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    margin-bottom: 12px;
+  }
+  .formbold-form-label-2 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .formbold-form-input {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    outline: none;
+    resize: none;
+  }
+  .formbold-form-input:focus {
+    border-color: #6a64f1;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold-btn {
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 14px 32px;
+    border: none;
+    font-weight: 600;
+    background-color: #6a64f1;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+  }
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold--mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .formbold-px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .w-full {
+    width: 100%;
+  }
+  @media (min-width: 540px) {
+    .sm\:w-half {
+      width: 50%;
+    }
+  }
+
+
+</style>
+{% endblock content%}

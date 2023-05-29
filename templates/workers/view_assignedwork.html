@@ -1,0 +1,148 @@
+{% include 'workers/dashboard.html'%}
+
+{% block content%}
+{% load static %}
+
+
+<style>
+
+  html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, .2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+     .status-pen{
+       font-weight:bold;
+       font-weight: bold;
+       font-family: 'Nunito';
+       font-family: system-ui;
+       color: #ed2a2a;
+     }
+     .status-com{
+       font-weight: bold;
+       font-family: 'Nunito';
+       font-family: system-ui;
+       color: #12b312;
+     }
+     update-btn:hover {
+  background-color: #3e8e41;
+}
+
+
+.no-action {
+  display: inline-block;
+  background-color: #bf0717;
+  color: white;
+  padding: 0px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight:bold;
+  border-radius: 26px;
+  cursor: pointer;
+  font-family:revert;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn {
+  display: inline-block;
+  background-color: #47a74b;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight:bold;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family:revert;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+</style>
+
+
+<section class="intro">
+    <div class="bg-image h-100"
+         style="background-image: url(https://mdbootstrap.com/img/Photos/new-templates/glassmorphism-article/img7.jpg);">
+        <div class="mask d-flex  h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card mask-custom">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless text-white mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Task Name</th>
+                                            <th scope="col">Project Name</th>
+                                            <th scope="col">Start Date</th>
+                                            <th scope="col">End Date</th>
+                                            <th scope="col">Work Assigned To</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in task %}
+                                        <tr>
+                                            <th scope="row">{{i.task_name}}</th>
+                                            <th scope="row">{{i.project_name.project_name}}</th>
+                                            <td class="status-com">{{i.s_date}}</td>
+                                            <td class="status-pen">{{i.e_date}}</td>
+                                            <td>{{i.workers.fullname}}</td>
+                                            {% if i.status == 'pending' %}
+                                            <td><a class="status-pen" href="{% url 'edit_taskinfo' i.id %}">Pending</a></td>
+                                            {% elif i.status == 'approved' %}
+                                            <td><a class="status-com" href="{% url 'edit_taskinfo' i.id %}">Approved</a></td>
+                                            {% elif i.status == 'on_going' %}
+                                            <td><a class="status-com" href="{% url 'edit_taskinfo' i.id %}">On Going</a></td>
+                                            {% else %}
+                                            <td class="status-pen">Completed</td>
+                                            {% endif %}
+                                            {% if i.status == 'approved'%}
+                                            <td><a class="update-btn" href="{% url 'task_updates' %}">Update</a></td>
+                                            {% else %}
+                                            <td><a class="no-action">No Action</a></td>
+                                            {% endif %}
+
+                                            </td>
+                                        </tr>
+                                        {% endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content%}

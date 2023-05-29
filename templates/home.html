@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Construct Pay</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>ConstructPay Home</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    {% load static %}
+    <!-- Favicons -->
+    <link href="{% static 'Home/assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'Home/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'Home/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'Home/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'Home/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'Home/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'Home/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'Home/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="{% static 'Home/assets/css/main.css' %}">
+
+
+    <!-- =======================================================
+    * Template Name: UpConstruction - v1.3.0
+    * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
+    <style>
+        #image{
+visibility : hidden;
+}
+
+ .heads{
+ font-weight:bold;
+
+ }
+
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-select select {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+}
+
+.custom-select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #555;
+  pointer-events: none;
+}
+
+.custom-select select:focus + .custom-select::after {
+  border-top-color: #333;
+}
+
+.custom-select select[disabled] {
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+.custom-select select[disabled] + .custom-select::after {
+  border-top-color: #ccc;
+}
+
+
+.submit{
+        margin-right: 230px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="#hero" class="active">Home</a></li>
+                <li><a href="{% url 'Login'%}">Login</a></li>
+                <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                <li><a href="projects.html">News & Events</a></li>
+                <li><a class="nav-link scrollto" href="#aboutus">About us</a></li>
+                <li><a class="nav-link scrollto" href="#contactus">Contact us</a></li>
+                <li><a href="{% url 'worker_login'%}">Worker Login</a></li>
+                <li><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">Admin</a></li>
+            </ul>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 data-aos="fade-down" class="heads"><span>CONSTRUCTPAY</span></h2>
+                    <p data-aos="fade-up"></p>
+                    <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active"
+             style="background-image: url({% static 'Home/assets/img/hero-carousel/hero-carousel-1.jpg'%})"></div>
+        <div class="carousel-item"
+             style="background-image: url({%static 'Home/assets/img/hero-carousel/hero-carousel-2.jpg'%})"></div>
+        <div class="carousel-item"
+             style="background-image: url({%static 'Home/assets/img/hero-carousel/hero-carousel-3.jpg'%})"></div>
+        <div class="carousel-item"
+             style="background-image: url({%static 'Home/assets/img/hero-carousel/hero-carousel-4.jpg'%})"></div>
+        <div class="carousel-item"
+             style="background-image: url({%static 'Home/assets/img/hero-carousel/hero-carousel-5.jpg'%})"></div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
+
+</section><!-- End Hero Section -->
+
+<main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started section-bg">
+        <div class="container">
+
+            <div class="row justify-content-between gy-4">
+
+                <div class="col-sm-4 d-flex align-items-center" data-aos="fade-up">
+
+                </div>
+
+                <section class="h-100 bg-dark">
+                    <div class="container py-5 h-100">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col">
+                                <div class="card card-registration my-4">
+                                    <div class="row g-0">
+                                        <div class="col-xl-6 d-none d-xl-block">
+                                            <img src="{% static 'home\assets\img\regsideimg.jpg'%}"
+                                                 alt="Sample photo" class="img-fluid"
+                                                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"/>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="card-body p-md-5 text-black">
+                                                <h3 class="mb-5 text-uppercase">Register Here !</h3>
+                                                <form method="post" enctype="multipart/form-data"
+                                                      action="{% url 'registrationin'%}">
+                                                    {% csrf_token %}
+                                                    <div class="col-md-6 mb-4">
+                                                        <label class="form-label">Select Role &nbsp;&nbsp;</label>
+                                                        <div class="custom-select-wrapper">
+                                                            <div class="custom-select">
+                                                                <select name="role">
+                                                                    <option value="contractor" selected>Contractor
+                                                                    </option>
+                                                                    <option value="client">Client</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="text" id="form3Example1m" class="form-control"
+                                                               name="fullname"/>
+                                                        <label class="form-label" for="form3Example1m">Name</label>
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="email" id="email" class="form-control" required
+                                                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
+                                                               name="email"/>
+                                                        <label class="form-label">Email</label>
+                                                        <div id="error-message" style="color: red;"></div>
+                                                    </div>
+
+
+                                                    <input type="hidden" value="default" name="phone">
+                                                    <input type="hidden" value="default" name="address">
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="text" id="form3Example9" class="form-control"
+                                                               name="username"/>
+                                                        <label class="form-label" for="form3Example9">Username</label>
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <div class="form-inline row">
+                                                            <div class="form-group col-sm-6 agileits-w3layouts">
+                                                                <input type="password" data-minlength="8"
+                                                                       class="form-control" id="inputPassword"
+                                                                       name="password"
+                                                                       placeholder="Password" required>
+                                                                  <label for="inputPassword"
+                                                               class="control-label">&nbsp;&nbsp;Password</label>
+
+                                                            </div>
+                                                            <div class="form-group col-sm-6 w3-agile">
+                                                                <input type="password" class="form-control"
+                                                                       id="inputPasswordConfirm"
+                                                                       placeholder="Confirm Password"
+                                                                       name="confirm_password">
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="password-error-message" style="color: red;"></div>
+                                                    </div>
+
+                                                    <br><br>
+
+                                                    <div class="d-flex justify-content-end pt-3">
+                                                        <button type="submit" class="btn btn-warning btn-lg submit">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+
+
+                                                    <script>
+        const emailInput = document.getElementById('email');
+        const errorMessage = document.getElementById('error-message');
+
+        emailInput.addEventListener('input', function () {
+            if (emailInput.validity.valid) {
+                errorMessage.textContent = '';
+            } else {
+                errorMessage.textContent = 'Please enter a valid email address.';
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            if (!emailInput.validity.valid) {
+                event.preventDefault();
+                errorMessage.textContent = 'Please enter a valid email address.';
+            }
+        });
+
+
+
+
+
+                                                    </script>
+
+                                                    <script>
+        const passwordInput = document.getElementById('inputPassword');
+        const confirmPasswordInput = document.getElementById('inputPasswordConfirm');
+        const passwordErrorMessage = document.getElementById('password-error-message');
+
+        passwordInput.addEventListener('input', function () {
+            const password = passwordInput.value;
+            if (password.length < 8) {
+                passwordErrorMessage.textContent = 'Password must be at least 8 characters long.';
+            } else {
+                passwordErrorMessage.textContent = '';
+            }
+        });
+
+        confirmPasswordInput.addEventListener('input', function () {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            if (password !== confirmPassword) {
+                passwordErrorMessage.textContent = 'Passwords do not match.';
+            } else {
+                passwordErrorMessage.textContent = '';
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            if (password.length < 8 || password !== confirmPassword) {
+                event.preventDefault();
+                passwordErrorMessage.textContent = 'Please enter a valid password.';
+            }
+        });
+
+
+
+                                                    </script>
+                                                </form>
+
+                                                {% if messages%}
+                                                {%for message in messages%}
+                                                <div class="alert alert-{{message.tags}}">
+                                                    {{message}}
+                                                    {% endfor %}
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======= Constructions Section ======= -->
+    <section id="aboutus" class="constructions">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>About us</h2>
+                <p>Construct Pay is a software platforms designed to help construction professionals manage
+                    various aspects of construction projects. The Construct Pay typically includes a range of features,
+                    such as project planning and scheduling, resource allocation, budgeting and cost control,
+                    collaboration tools, document management, and reporting.
+
+                </p>
+            </div>
+        </div>
+    </section><!-- End Constructions Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Services</h2>
+                <p>Construct Pay provide various Services Like</p>
+            </div>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item  position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-mountain-city"></i>
+                        </div>
+                        <h3>Home Constructions</h3>
+                        <p>Home construction refers to the process of building a house from the ground up. This can
+                            involve a range of activities, including site preparation, foundation laying, framing,
+                            electrical and plumbing work, roofing, insulation, and finishing touches such as painting
+                            and landscaping.
+
+                        </p>
+                        <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+                        </div>
+                        <h3>Electrical works</h3>
+                        <p>Electrical works at home involve the installation, repair, and maintenance of electrical
+                            systems and components within a residential setting. This includes everything from wiring
+                            and lighting to electrical outlets, switches, and appliances.
+
+                        </p>
+                        <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3>Plumbing </h3>
+                        <p>Plumbing refers to the system of pipes, fixtures, and fittings that are used to distribute
+                            water throughout a building and remove wastewater. In a residential setting, plumbing is
+                            essential for providing clean water for drinking, cooking, and bathing, as well as for
+                            removing waste and preventing the spread of disease.
+
+                        </p>
+                        <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-trowel-bricks"></i>
+                        </div>
+                        <h3>Fire Protection</h3>
+                        <p>Fire protection services are a range of services and systems designed to protect buildings
+                            and their occupants from the risk of fire. These services typically include fire alarm
+                            systems, fire suppression systems, fire extinguishers, and fire safety training.
+
+                        </p>
+                        <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+                        <h3>Air Conditioning</h3>
+                        <p>Air conditioning is a system that regulates and controls the temperature, humidity, and air
+                            quality within a building. In a residential setting, air conditioning is used to provide a
+                            comfortable indoor environment during hot and humid weather conditions.
+
+                        </p>
+                        <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+                        </div>
+                        <h3>Security System</h3>
+                        <p>A security system at home is a system designed to protect a home from unauthorized entry,
+                            theft, vandalism, or other forms of crime. This system may include a range of components,
+                            such as alarms, sensors, cameras, and access control systems.
+
+                        </p>
+                        <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Our Projects Section ======= -->
+    <section id="contactus" class="projects">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Contact us</h2>
+                <div class="footer-content position-relative">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="footer-info">
+                                    <h3>Construct Pay</h3>
+                                    <p>
+                                        A8 Adam Street <br>
+                                        PIN 688004 Alappuzha<br><br>
+                                        <strong>Phone:</strong> +91 8089013299<br>
+                                        <strong>Email:</strong> constructpay@gmail.com<br>
+                                    </p>
+                                    <div class="social-links d-flex mt-3">
+                                        <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                                class="bi bi-twitter"></i></a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                                class="bi bi-facebook"></i></a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                                class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Our Projects Section -->
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-info">
+                        <h3>Construct Pay</h3>
+                        <p>
+                            A1 Adam Street <br>
+                            PIN 68804 Alappuzha<br><br>
+                            <strong>Phone:</strong> +91 8089013299<br>
+                            <strong>Email:</strong> constructpay@gmail.com<br>
+                        </p>
+                        <div class="social-links d-flex mt-3">
+                            <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                    class="bi bi-twitter"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><i
+                                    class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End footer info column-->
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#aboutus">About us</a></li>
+                        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div><!-- End footer links column-->
+
+
+                <div class="footer-legal text-center position-relative">
+                    <div class="container">
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>ConstructPay</span></strong>. All Rights Reserved
+                        </div>
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+                            Designed by <a href="https://bootstrapmade.com/">Ayana B</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'Home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'Home/assets/vendor/aos/aos.js'%}"></script>
+<script src="{% static 'Home/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+<script src="{% static 'Home/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+<script src="{% static 'Home/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+<script src="{% static 'Home/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'Home/assets/vendor/php-email-form/validate.js'%}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'Home/assets/js/main.js'%}"></script>
+
+</body>
+
+</html>
+</body>
+</html>

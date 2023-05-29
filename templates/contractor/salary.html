@@ -1,0 +1,159 @@
+{% include 'contractor/dashboard.html' %}
+{% block content %}
+
+<table class="table align-middle mb-5 bg-grey">
+    <thead class="bg-light">
+    <tr>
+        <th scope="col" style="color:red">Worker Details</th>
+        <th scope="col" style="color:red">Contractor Name</th>
+        <th scope="col" style="color:red"> Salary</th>
+        <th scope="col" style="color:red">Increment Salary</th>
+        <th scope="col" style="color:red">Payment Status</th>
+        <th scope="col" style="color:red">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in workers %}
+    <tr>
+        <td>
+            <div class="d-flex align-items-center">
+                <img
+                        src="{{i.image.url}}"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"/>
+                <div class="ms-3" style="color:black">
+                    <p class="fw-bold mb-1">{{i.fullname}}</p>
+                    <p class="fw-bold mb-1" style="color:black">{{i.phone}}</p>
+                </div>
+            </div>
+        </td>
+        <td style="color:black">{{i.contractor.fullname}}</td>
+        <td style="color:black">{{i.salary}}</td>
+        <td style="color:black">{{ i.incremented_salary }}</td>
+        {% if i.salary_payment_set.exists %}
+        <td class="paid">Paid</td>
+        {% else %}
+        <td class="not-paid">Not Paid</td>
+        {% endif %}
+        {% if i.salary_payment_set.exists %}
+        <td><a class="update-btns" >Payed</a>
+        {% else %}
+        <td><a class="update-btn" href="{%  url 'salary_payment' i.id %}">Pay</a>
+        {% endif %}
+        </td>
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+<style type="text/css">
+table {
+   border-collapse: unset;
+   width: 83%;
+   margin-top: 4%;
+
+}
+
+th, td {
+   text-align: left;
+   padding: 8px;
+   border-bottom: 1px solid #ddd;
+   padding: 10px;
+   text-align:center;
+
+   color:#9f3838;
+
+}
+
+tr:hover {
+   background-color: #f5f5f5;
+   width: 10px;
+}
+
+th {
+   background-color: #05091a;
+   color: white;
+}
+
+     .dashboard{
+          margin-left: 18%;
+          margin-top: 2%;
+          display: flex;
+      }
+      .linetwo{
+         margin-left:18%;
+         margin-top:2%;
+         display:flex;
+
+      }
+       .heading{
+         margin-left:18%;
+         margin-top:1%;
+          font-size: 15px;
+          font-weight: 600;
+          background-image: linear-gradient(to left, #2a196a, #1a1553)
+          color: transparent;
+          background-clip: text;
+         -webkit-background-clip: text;
+
+
+      }
+
+
+.update-btn {
+  display: inline-block;
+  background-color: #58af5c;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight:bold;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family:revert;
+  transition: background-color 0.3s ease;
+}
+
+.update-btns {
+  display: inline-block;
+  background-color:  #f1083a;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight:bold;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family:revert;
+  transition: background-color 0.3s ease;
+}
+
+.paid {
+
+  cursor: pointer;
+  color:#1acb2b;
+  font-family:revert;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.not-paid {
+  cursor: pointer;
+  color: #f1083a;
+  font-family:revert;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+</style>
+
+{% endblock content%}
